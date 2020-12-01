@@ -31,34 +31,16 @@ password_field = browser_host.find_element_by_name("pass")
 password_field.send_keys(config('PASS'))
 password_field.send_keys(Keys.ENTER)
 facebook = browser_host.window_handles[0]
-##while True:
-##        try:
-##                Xpath1 = input("enter xpath1")
-##                browser_host.find_element_by_xpath(Xpath1).click()
-##                break
-##        except:
-##                print("can't press the button, try again")
-##while True:
-##        try:
-##                Xpath2 = input("enter xpath2")
-##                browser_host.find_element_by_xpath(Xpath2).click()
-##                break
-##        except:
-##                print("can't press the button, try again")
 while True:
     try:
-        Xpath3 = input("enter Xpath3")
+        Xpath = input("enter Xpath")
         break
     except:
         print("can't press the button, try again")
 
 def set_up_facebook():
-##        browser_host.refresh
-##        browser_host.find_element_by_xpath(Xpath1).click()
-##        time.sleep(DELAY)
-##        browser_host.find_element_by_xpath(Xpath2).click()
     time.sleep(DELAY)
-    browser_host.find_element_by_xpath(Xpath3).click()
+    browser_host.find_element_by_xpath(Xpath).click()
 def get_coor():
     set_up_facebook()
     time.sleep(DELAY)
