@@ -15,4 +15,16 @@ This repository is for Data Acquisition class final project.
 
 ### Running roughness measurement for Kidbright
 
+1. Install imu.py module in your Kidbright device from git <a href=https://github.com/microBlock-IDE/micropython/tree/master/ports/esp32/boards/KidBright32/modules/imu.py>Here</a>
+2. In file <a href=https://github.com/326th/Roughness-measurement-respository/blob/master/Roughness%20measure.py>Roughness measure.py</a>, change the following:
+
+   In line 46, change WIFI_NAME and WIFI_PASSWORD to the name and password of the wifi your kidbright will use    
+   In line 52, change MQTT_SERVER to MQTT server you will use
+   
+3. Change TIMES and SLEEP in line 7,8 to the amount of times you will measure roughness to average and interval between each measures
+4. Run your file Roughness measure.py on Kidbright device
+
+Your Kidbright device will now sent the average roughness and send them to channel ku/daq2020/cosmic/acc
+
+For future uses, you only need to run step 4.
 ### Running GPS tracker
