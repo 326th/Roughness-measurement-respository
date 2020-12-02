@@ -3,7 +3,6 @@ import network
 from machine import Pin
 from umqtt.robust import MQTTClient
 import imu
-import a
 
 TIMES = 100
 SLEEP = 0.1 
