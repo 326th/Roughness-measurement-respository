@@ -7,8 +7,8 @@ import unittest
 import time
 import paho.mqtt.client as mqtt
 
-DRIVER_PATH = "C:/Users/USER/Desktop/chromedriver.exe"
-BROWSER_PATH = "C:/Program Files (x86)/BraveSoftware/Brave-Browser/Application/brave.exe"
+DRIVER_PATH = config('DRIVER_PATH')
+BROWSER_PATH = config('BROWSER_PATH')
 DELAY = 1
 
 def set_up(driver_path,browser_path):
@@ -21,7 +21,7 @@ def set_up(driver_path,browser_path):
     browser = webdriver.Chrome(executable_path=driver_path,  options=option)
     return browser
 
-area_group = input("please enter area grouping")
+area_group = input("please enter area grouping : ")
 browser_host = set_up(DRIVER_PATH,BROWSER_PATH)
 browser_host.get("https://www.facebook.com/")
 time.sleep(DELAY)
@@ -31,9 +31,10 @@ password_field = browser_host.find_element_by_name("pass")
 password_field.send_keys(config('PASS'))
 password_field.send_keys(Keys.ENTER)
 facebook = browser_host.window_handles[0]
+
 while True:
     try:
-        Xpath = input("enter Xpath")
+        Xpath = input("enter Xpath for gps tracking : ")
         break
     except:
         print("can't press the button, try again")
@@ -60,7 +61,7 @@ def on_message(client, userdata, message):
     latlong = get_coor()
     client.publish("ku/daq2020/cosmic/suit", latlong + "," + str(message.payload.decode("utf-8"))+',"'+area_group+'"')
 
-mqttBroker ="iot.cpe.ku.ac.th"
+mqttBroker = config('MQTT_SERVER')
 client = mqtt.Client("GPS")
 client.connect(mqttBroker) 
 
