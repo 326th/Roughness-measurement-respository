@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from decouple import config
-import requests
-import unittest
 import time
 import paho.mqtt.client as mqtt
 
