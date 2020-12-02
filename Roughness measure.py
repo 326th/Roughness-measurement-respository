@@ -3,6 +3,7 @@ import network
 from machine import Pin
 from umqtt.robust import MQTTClient
 import imu
+from decouple import config
 
 TIMES = 100
 SLEEP = 0.1 
@@ -43,13 +44,13 @@ led_iot.value(1)
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 print("*** Connecting to WiFi...")
-wlan.connect("NaviPhone","pjduck3qqvi43")
+wlan.connect("WIFI_NAME","WIFI_PASSWORD")
 while not wlan.isconnected():
     time.sleep(0.5)
 print("*** Wifi connected")
 led_wifi.value(0)
 ## connect broker
-mqtt = MQTTClient("Thananan ","iot.cpe.ku.ac.th")
+mqtt = MQTTClient("Acc","MQTT_SERVER")
 print("*** Connecting to MQTT broker...")
 mqtt.connect()
 print("*** MQTT broker connected")
