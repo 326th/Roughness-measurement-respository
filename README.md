@@ -22,7 +22,7 @@ This repository is for Data Acquisition class final project.
    In line 52, change MQTT_SERVER to MQTT server you will use
    
 3. Change TIMES and SLEEP in line 7,8 to the amount of times you will measure roughness to average and interval between each measures
-4. Run your Kidbright device
+4. Run your file Roughness measure.py on Kidbright device
 
 Your Kidbright device will now sent the average roughness and send them to channel ku/daq2020/cosmic/acc
 
