@@ -1,0 +1,90 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
+
+<script>
+    async function createChart() {
+    var resp = await fetch('http://localhost:3000/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          query: `
+            {
+                correlation{
+                    correlation
+                    grouping
+                }
+            }`
+        })
+       });
+       var values = []
+       var json = await resp.json();
+       for (correlation of json.data.correlation){
+           if (correlation.correlation == null){
+                values.push([0]);
+           }else{
+                var temp = [correlation.correlation];
+                values.push(temp);
+           }
+       }
+       var data = [{
+            type: 'table',
+            header: {
+                values: [],
+                align: "center",
+                line: {width: 1, color: 'black'},
+                fill: {color: "grey"},
+                font: {family: "Arial", size: 12, color: "white"}
+            },
+            cells: {
+                values: values,
+                align: "center",
+                line: {color: "black", width: 1},
+                font: {family: "Arial", size: 11, color: ["black"]}
+            }
+       }]
+       for (correlation of json.data.correlation){
+           var temp = [correlation.grouping];
+           data[0].header.values.push(temp);
+       }
+       Plotly.newPlot('myDiv', data);
+    }
+    createChart();
+    
+	var values = [
+      ['Salaries'],
+      [1200000],
+      [1300000],
+      [1300000],
+      [1400000]]
+
+    var data = 
+    [{
+        type: 'table',
+        header: {
+            values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],
+				 ["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]],
+            align: "center",
+            line: {width: 1, color: 'black'},
+            fill: {color: "grey"},
+            font: {family: "Arial", size: 12, color: "white"}
+        },
+        cells: {
+            values: values,
+            align: "center",
+            line: {color: "black", width: 1},
+            font: {family: "Arial", size: 11, color: ["black"]}
+        }
+    }]
+
+
+
+</script>

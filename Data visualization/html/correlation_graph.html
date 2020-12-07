@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Correlation</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+  <div id="chart" style="width:100%;height:75vh;"></div>
+  <script>
+    async function createChart() {
+      var resp = await fetch('http://localhost:3000/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          query: `
+            {heightAndAcceleration {
+		iD
+            	latitude
+            	longitude
+  		height
+		acceleration
+  		grouping
+                }
+              }`
+        })
+      });
+      var json = await resp.json();
+      var table = json.data;
+      console.log(table)
+      var length = Object.keys(table.heightAndAcceleration).length;
+      var i;
+      var j;
+      var k;
+	var ckeys = ["Bangyai_Tonkla", "Bangyai_Road_Tonkla", "Popia_Village", "Village", "Pahol_Rd", "Vibha_Rd", "KU_Rd"]
+      var cvalues = ["orange","blue", "black", "green", "cyan", "purple", "pink"];
+	var clength = Object.keys(ckeys).length;
+
+      var data = [
+						{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Bangyai_Tonkla',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Bangyai_Road_Tonkla',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Popia_Village',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Village',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Pahol_Rd',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'Vibha_Rd',
+      						},
+{
+        						x: [],
+        						y: [],
+        						mode: 'markers',
+  							type: 'scatter',
+        						name: 'KU_Rd',
+      						}];
+
+      for(i = 0; i < length; i++) {
+	var grouping = table.heightAndAcceleration[i].grouping;
+	for(j = 0; j < clength; j++){
+		if(grouping == ckeys[j]){
+				data[j].x.push(table.heightAndAcceleration[i].acceleration);
+				data[j].y.push(table.heightAndAcceleration[i].height);
+		}
+	}
+      }
+
+      console.log(data);
+      var layout = {
+        title: 'Correlation',
+        xaxis: {
+          title: 'Height'
+        },
+        yaxis: {
+          title: 'Roughness'
+        }
+      };
+      var config = { responsive: true };
+      Plotly.newPlot("chart", data, layout, config);
+    } 
+    createChart();
+  </script>
+</body>
+</html>
