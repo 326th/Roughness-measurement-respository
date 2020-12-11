@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Correlation</title>
+<title>Correlation Graph</title>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
   <div id="chart" style="width:100%;height:75vh;"></div>
@@ -34,61 +34,28 @@
       var i;
       var j;
       var k;
-	var ckeys = ["Bangyai_Tonkla", "Bangyai_Road_Tonkla", "Popia_Village", "Village", "Pahol_Rd", "Vibha_Rd", "KU_Rd"]
+      var ckeys = [];
       var cvalues = ["orange","blue", "black", "green", "cyan", "purple", "pink"];
-	var clength = Object.keys(ckeys).length;
+      var data = [];
 
-      var data = [
-						{
+      for(i = 0; i < length; i++) {
+	var grouping = table.heightAndAcceleration[i].grouping;
+	var jsondata = {
         						x: [],
         						y: [],
         						mode: 'markers',
   							type: 'scatter',
-        						name: 'Bangyai_Tonkla',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'Bangyai_Road_Tonkla',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'Popia_Village',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'Village',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'Pahol_Rd',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'Vibha_Rd',
-      						},
-{
-        						x: [],
-        						y: [],
-        						mode: 'markers',
-  							type: 'scatter',
-        						name: 'KU_Rd',
-      						}];
+        						name: '',
+      				};
+	if(!ckeys.includes(grouping)){
+		ckeys.push(grouping);
+		jsondata["name"] = grouping;
+		data.push(jsondata);
 
+	 }
+       }
+
+      var clength = Object.keys(ckeys).length;
       for(i = 0; i < length; i++) {
 	var grouping = table.heightAndAcceleration[i].grouping;
 	for(j = 0; j < clength; j++){
@@ -98,10 +65,10 @@
 		}
 	}
       }
-
+	console.log(ckeys);
       console.log(data);
       var layout = {
-        title: 'Correlation',
+        title: 'Correlation Graph',
         xaxis: {
           title: 'Height'
         },
