@@ -58,7 +58,7 @@ def on_message(client, userdata, message):
     latlong = get_coor()
     client.publish("ku/daq2020/cosmic/suit", latlong + "," + str(message.payload.decode("utf-8"))+',"'+area_group+'"')
 
-mqttBroker = config('MQTT_SERVER')
+mqttBroker = config('MQTT_BROKER')
 client = mqtt.Client("GPS")
 client.connect(mqttBroker) 
 
