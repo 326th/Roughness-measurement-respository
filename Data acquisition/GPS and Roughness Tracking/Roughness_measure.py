@@ -49,7 +49,7 @@ while not wlan.isconnected():
 print("*** Wifi connected")
 led_wifi.value(0)
 ## connect broker
-mqtt = MQTTClient("Acc","MQTT_SERVER")
+mqtt = MQTTClient("Acc","MQTT_BROKER")
 print("*** Connecting to MQTT broker...")
 mqtt.connect()
 print("*** MQTT broker connected")
