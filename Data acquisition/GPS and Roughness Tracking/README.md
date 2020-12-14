@@ -48,7 +48,7 @@ MQTT_BROKER=example.org
 
 1. Import `Node-RED_GPS_Automation.json` to your Node-RED
 
-2. Edit node `Edit your Mqtt Broker node here` and edit `Your MQTT Broker` in server, edit `MQTT_BROKER` to your MQTT Broker
+2. Edit node `Edit your Mqtt Broker node here` and edit `Your MQTT Broker` then change `MQTT_BROKER` to your MQTT Broker
 
 3. Edit node `Edit your Database Here` and edit `Your Database` based on your database setting
 
