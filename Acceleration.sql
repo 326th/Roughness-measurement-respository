@@ -1,4 +1,3 @@
-Use SCHEMAS_NAME;
 -- phpMyAdmin SQL Dump
 -- version 4.9.1
 -- https://www.phpmyadmin.net/
@@ -19,16 +18,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `b6110545571`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Acceleration`
---
-
 CREATE TABLE `Acceleration` (
   `ID` int(11) NOT NULL,
   `Latitude` decimal(15,12) NOT NULL,
@@ -38,29 +27,21 @@ CREATE TABLE `Acceleration` (
   `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `Acceleration`
---
+CREATE TABLE `Height` (
+  `ID` int(11) NOT NULL,
+  `Latitude` decimal(15,12) NOT NULL,
+  `Longitude` decimal(15,12) NOT NULL,
+  `Height` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `Acceleration`
---
 ALTER TABLE `Acceleration`
   ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Acceleration`
---
+ALTER TABLE `Height`
+  ADD PRIMARY KEY (`ID`);
 ALTER TABLE `Acceleration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1322;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `Height`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
