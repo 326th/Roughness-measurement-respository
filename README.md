@@ -6,7 +6,7 @@ This project mainly focuses on automating the data collection process but allows
 
 # Requirement
 
-This project operate on Database, this project needs this database to operate properly, you can use your own database with the schema provided
+This project operate on Database, this project needs database to operate properly, you can use your own database by running Tables.sql to create nessesary tables.
 
 ## Made by Cosmic Express group
 
