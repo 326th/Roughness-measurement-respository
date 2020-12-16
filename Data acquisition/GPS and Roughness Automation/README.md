@@ -1,6 +1,6 @@
-# Roughness-measurement
+# GPS and roughness automation
 
-This repository provide you a way to collect average roughness of a road and store it to .
+This programs provide you a way to collect average roughness of a road and store it to Database.
 
 This repository is for Data Acquisition class final project.
 
