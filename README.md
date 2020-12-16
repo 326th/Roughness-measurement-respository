@@ -26,4 +26,4 @@ This project made to collect data and visualize it
 
 ### Datacollection
 
-#### To collect Road's roughness and its GPS coordination click [here](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20acquisition/GPS%20and%20Roughness%20Tracking)
+#### To collect Road's roughness and its GPS coordination click [here](https://github.com/326th/Roughness-measurement-respository/blob/master/Data%20acquisition/GPS%20and%20Roughness%20Automation/README.md)
