@@ -4,13 +4,14 @@ This Node-RED files allow you to get data from GPS in Acceleration table and the
 
 ## Requirements
 
-- Data of GPS locations in Acceleration table (Can get by following [GPS and roughness automation](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20acquisition/GPS%20and%20Roughness%20Tracking))
+- Data of GPS locations in Acceleration table (Can get by following [GPS and roughness automation](https://github.com/326th/Roughness-measurement-respository/blob/master/Data%20acquisition/GPS%20and%20Roughness%20Automation/README.md))
 - Node-RED server
 
 ## Set up
 
 1. Import `API request Automation.json` and `Height table migrate.json` to your Node-RED server
 2. Open the flow imported from `Height table migrate.json` (Import lat lon to height) then click on the either of node `Edit your database here` and edit `Your Database` based on your database setting
+3. Hit deploy
 
 ## Running
 
