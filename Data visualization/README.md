@@ -59,13 +59,13 @@ status code : 200
 
 ## Get the accelerations
 URL ```road/v1/accelerations```
-###Request
+### Request
 ```
 {
     "Accept": "application/json"
 }
 ```
-###Response
+### Response
 Example value
 ```
 status code : 200
@@ -80,13 +80,13 @@ status code : 200
 ```
 ## Get the average height of road
 URL ```road/v1//heightAVG```
-###Request
+### Request
 ```
 {
     "Accept": "application/json"
 }
 ```
-###Response
+### Response
 Example value
 ```
 status code : 200
@@ -99,13 +99,13 @@ status code : 200
 ```
 ## Get the average accelerations
 URL ```road/v1//accelerationAVG```
-###Request
+### Request
 ```
 {
     "Accept": "application/json"
 }
 ```
-###Response
+### Response
 Example value
 ```
 status code : 200
@@ -118,13 +118,13 @@ status code : 200
 ```
 ## Get the correlation
 URL ```road/v1/correlation```
-###Request
+### Request
 ```
 {
     "Accept": "application/json"
 }
 ```
-###Response
+### Response
 Example value
 ```
 status code : 200
@@ -137,13 +137,13 @@ status code : 200
 ```
 ## Get the a height and correlation of all grouping
 URL ```road/v1//heightAndAcceleration```
-###Request
+### Request
 ```
 {
     "Accept": "application/json"
 }
 ```
-###Response
+### Response
 Example value
 ```
 status code : 200
