@@ -33,7 +33,7 @@
 2. Open index.html on your browser
 3. See data visualization!
 
-#API
+# API
 The API to this Data visualization are describe as below
 ## Get the height of the road
 URL ```road/v1/heights```
