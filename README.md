@@ -1,8 +1,8 @@
 # Roughness Measurement Respository
 
-This project was made for gathering data of read roughness of real life location and its elevation and visualize it.
+This project was made for gathering data of reading roughness of real-life location and its elevation and visualize it.
 
-This project mainly focuses on automating the data collection process but allows for mannual collection
+This project mainly focuses on automating the data collection process but allows for manual collection
 
 ## Made by Cosmic Express group
 
@@ -18,13 +18,13 @@ Kasetsart University
 
 ## Requirement
 
-This project operate on Database, this project needs database to operate properly, you can use your own database by running Tables.sql to create nessesary tables.
+This project operates on Database, this project needs a database to operate properly, you can use your database by running Tables.sql to create necessary tables.
 
 ## Capabilities
 
-This project made to collect data and visualize it
+This project made to collect data and visualize them
 
-### Datacollection
+## Data collection
 
 #### To collect road's roughness and its GPS coordination, click [here](https://github.com/326th/Roughness-measurement-respository/blob/master/Data%20acquisition/GPS%20and%20Roughness%20Automation)
 #### To collect elevation data for GPS location, click [here](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20acquisition/Height%20API%20Automation)

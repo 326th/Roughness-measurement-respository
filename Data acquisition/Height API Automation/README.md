@@ -1,6 +1,6 @@
 # Height API Automation
 
-This Node-RED files allow you to get data from GPS in Acceleration table and then migrate to Height table and assign it's sea elevation vaule via Open elevation API
+These Node-RED files allow you to get data from GPS in Acceleration table and then migrate to Height table and assign its sea elevation value via Open elevation API
 
 ## Requirements
 
@@ -15,5 +15,5 @@ This Node-RED files allow you to get data from GPS in Acceleration table and the
 
 ## Running
 
-1. In flow imported from`Height table migrate.json` (Import lat lon to height), click inject node and waits until it import every unique location to Height table (when done, it will display the message)
-2. In flow imported from `API request Automation.json` (Height API request) then click inject and waits unti it assign elevation to every GPS (when done, it will display the message)
+1. In the flow imported from`Height table migrate.json` (Import lat lon to height), click inject node and waits until it import every unique location to Height table (when done, it will display the message)
+2. In the flow imported from `API request Automation.json` (Height API request) then click inject and waits until it assigns elevation to every GPS (when done, it will display the message)
