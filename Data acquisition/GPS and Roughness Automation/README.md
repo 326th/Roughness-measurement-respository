@@ -54,6 +54,10 @@ MQTT_BROKER=example.org
 
 ## Running
 
+### Running Node-RED Database Handler
+
+Press the Deploy button
+
 ### Running Kidbright
 
 You can run your kidbright with the file `Roughness_measure.py` to run on your Kidbright with program like <a href=https://thonny.org/>Thonny<a>.
@@ -69,7 +73,3 @@ After that, the program will ask for the grouping name, you can enter any name.
 The program will boot up your browser and log in to Facebook for you. Open the chat containing your GPS tracking and press Ctrl + Shift + C then click the link to open gps location on map. This will highlight part of the code that links you to Bing map, right click then select Copy > Copy Xpath. Paste the Xpath in command line.  
 
 Now the program will track everytime Kidbright signal then forward it to ku/daq2020/cosmic/suit with latitude, longitude and grouping name.
-
-### Running Node-RED Database Handler
-
-Press the Deploy button
