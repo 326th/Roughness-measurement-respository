@@ -10,3 +10,5 @@ Replace [Latitude], [Longtitude], [Roughness], [Elevation] and [Grouping] in the
 INSERT INTO `Acceleration`( `Latitude`, `Longitude`, `Acceleration`, `Grouping`) VALUES ([Latitude], [Longtitude], [Roughness], [Grouping]);
 INSERT INTO `Height`(`Latitude`, `Longitude`, `Height`) VALUES ([Latitude], [Longtitude], [Elevation])
 ```
+
+Run the SQL command in your database
