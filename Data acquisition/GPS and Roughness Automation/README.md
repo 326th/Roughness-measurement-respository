@@ -10,7 +10,7 @@ This repository is for Data Acquisition class final project.
 - Python3
 - Mobile Device
 - Facebook account
-- Node-RED server
+- Node-RED on mobile
 - MQTT Broker
 
 ## Setting up
@@ -29,22 +29,14 @@ This repository is for Data Acquisition class final project.
 ```pip install -r requirements.txt```
 
 2. Create `.env` files that contains the following:
-    - EMAIL={your Facebook username}  
-    - PASS={your Facebook password}  
-    - DRIVER_PATH={path to your Chrome driver (include the file name in the path) }  
-    - BROWSER_PATH={path to your Chrome/Brave executable (include the file name in the path) }  
     - MQTT_BROKER={your MQTT broker (must be the same as the one you used for Kidbright) }  
     
 Example `.env` fle:
 ```
-EMAIL=Example@exmail.com
-PASS=PassWordGoesHere
-DRIVER_PATH=C:/Users/USER/Desktop/chromedriver.exe
-BROWSER_PATH=C:/Program Files (x86)/BraveSoftware/Brave-Browser/Application/brave.exe
-MQTT_BROKER=example.org
+MQTT_BROKER=iot.cpe.ku.ac.th
 ```
 
-### Setting up Node-RED Database Handler
+### Setting up Node-RED Database Handler (For PC or Moblie)
 
 1. Import `Node-RED_GPS_Automation.json` to your Node-RED
 
@@ -52,11 +44,21 @@ MQTT_BROKER=example.org
 
 3. Edit node `Edit your Database Here` and edit `Your Database` based on your database setting
 
+### Setting up Node-RED GPS tracker (Mobile only)
+
+1. Import `Node-RED-Mobile_GPS_tracking.json` to your mobile Node-RED
+
+2. Edit node `ku/daq2020/cosmic/gps` and edit `Your MQTT Broker` then change `MQTT_BROKER` to your MQTT Broker
+
 ## Running
 
 ### Running Node-RED Database Handler
 
 Press the Deploy button
+
+### Setting up Node-RED GPS tracker 
+
+Press the button next to `Subscribe` Node
 
 ### Running Kidbright
 
@@ -64,12 +66,8 @@ You can run your kidbright with the file `Roughness_measure.py` to run on your K
     
 ### Running GPS tracker
 
-On Facebook, start sharing your location on any chat.  
+1. Run `GPSextract.py` on Idle
 
-run the following commmand,    
-`python GPSextract.py`    
-After that, the program will ask for the grouping name, you can enter any name.    
+2. Enter your grouping are on the prompt `Enter your grouping : `
 
-The program will boot up your browser and log in to Facebook for you. Open the chat containing your GPS tracking and press Ctrl + Shift + C then click the link to open gps location on map. This will highlight part of the code that links you to Bing map, right click then select Copy > Copy Xpath. Paste the Xpath in command line.  
-
-Now the program will track everytime Kidbright signal then forward it to ku/daq2020/cosmic/suit with latitude, longitude and grouping name.
+## Once you ran all 4 programs, your location and roughness will be track and automatically added to your database
