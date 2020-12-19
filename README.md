@@ -28,4 +28,5 @@ This project made to collect data and visualize them
 
 #### To collect road's roughness and its GPS coordination, click [here](https://github.com/326th/Roughness-measurement-respository/blob/master/Data%20acquisition/GPS%20and%20Roughness%20Automation)
 #### To collect elevation data for GPS location, click [here](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20acquisition/Height%20API%20Automation)
+#### To add your own data with from different sources, click [here](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20acquisition/Mannual%20data%20insertion)
 #### To visualize your data, click [here](https://github.com/326th/Roughness-measurement-respository/tree/master/Data%20visualization)
